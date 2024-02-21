@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    align-items: center;
+}
+.container div{
+    margin: 0 10px;
+    cursor: pointer;
+    justify-content: center;
+}
+.update-button, .zerar-button, .delete-button{
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin-left: 20px;
+}
+.formUpdate{
+    display: flex;
+    flex-direction: row;
+}
+
