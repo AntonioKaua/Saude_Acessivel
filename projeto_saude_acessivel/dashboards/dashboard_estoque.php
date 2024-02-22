@@ -1,49 +1,57 @@
 <?php
-include_once("../templates/header.php");
-include_once("../process/orders_dash.php");
+  include_once("../templates/header.php");
+  include_once("../process/orders_dash.php");
 
 ?>
-<div id="main-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Gerenciar medicamentos:</h2>
-      </div>
-      <div class="col-md-12 table-container">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col"><span>Medicamentos</span> #</th>
-              <th scope="col">Miligramagem</th>
-              <th scope="col">Quantidade</th>
-              <th scope="col">Unidade</th>
-            </tr>
-          </thead>
-          <script>
-            function filtrarMedicamentos() {
-              var input, filtro;
-              input = document.getElementById("filtroMedicamentos");
-              filtro = input.value;
+  <div id="main-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Gerenciar medicamentos:</h2>
+        </div>
+        <div class="form-group">
+          <label for="filtroMedicamentos">Filtrar Medicamentos:</label>
+          <input type="text" class="form-control" id="filtroMedicamentos" oninput="filtrarMedicamentos()">
+        </div>
+        <script>
+          function filtrarMedicamentos() {
+            var input, filtro;
+            input = document.getElementById("filtroMedicamentos");
+            filtro = input.value;
 
-              // Envia o texto digitado para o servidor via AJAX para processamento
-              var xhr = new XMLHttpRequest();
-              xhr.open("POST", "process/filtrar_medicamentos.php", true);
-              xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-              xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                  if (xhr.status === 200) {
-                    // Atualiza a tabela com os medicamentos filtrados
-                    var tabela = document.querySelector(".table-striped");
-                    tabela.innerHTML = xhr.responseText;
-                  } else {
-                    console.error("Erro ao processar requisição.");
-                  }
+            // Envia o texto digitado para o servidor via AJAX para processamento
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "../process/filtrar_medicamentos.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+              if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                  // Atualiza a tabela com os medicamentos filtrados
+                  var tabela = document.querySelector(".table-striped");
+                  tabela.innerHTML = xhr.responseText;
+                } else {
+                  console.error("Erro ao processar requisição.");
                 }
-              };
-              xhr.send("filtro=" + filtro);
-            }
-          </script>
-          <tbody>
+              }
+            };
+            xhr.send("filtro=" + filtro);
+          }
+
+        </script>
+
+        <div class="col-md-12 table-container">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col"><span>Medicamentos</span> #</th>
+                <th scope="col">Miligramagem</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Unidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach($medicamentos as $medicamento):
+                $id_input = "quantidade" . strtolower(str_replace(" ", "_", $medicamento["nome"])); ?>
                 <tr>
                   <td><?= $medicamento["nome"] ?></td>
                   <td><?= $medicamento["miligramagem"] ?></td>
@@ -68,9 +76,10 @@ include_once("../process/orders_dash.php");
                         <i class="bi bi-dash"></i>
                         <i class="bi bi-dash"></i>
                       </div>
-                      <button type="submit" class="update-button">
+                    <button type="submit" class="update-button">
                         <i class="bi bi-arrow-repeat"></i>
-                      </button>
+                  </button>
+                </div>        
                     </form>
                   </td>
                   <td>
@@ -83,21 +92,21 @@ include_once("../process/orders_dash.php");
                   </td>
                   </form>
                   <form action="../process/orders_dash.php" method="post" id="deletar" onsubmit="return confirmarEnvio2('deletar')">
-                    <input type="hidden" name="type" id="tipo" value="DELETAR">
-                    <input type="hidden" name="id" value="<?= $medicamento["id"] ?>">
-                    <button type="submit" class="delete-button">
-                      <i class="fas fa-times"></i>
-                    </button>
-                  </form>
+                      <input type="hidden" name="type" id="tipo" value="DELETAR">
+                      <input type="hidden" name="id" value="<?= $medicamento["id"] ?>">
+                      <button type="submit" class="delete-button">
+                        <i class="fas fa-times"></i>
+                      </button>
+                  </td>
+                  </form>                                    
                 </tr>
-            <?php
-            ?>
-          </tbody>
-        </table>
+                  <?php endforeach; ?>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-</div>
 <?php
-include_once("../templates/footer.php");
+  include_once("../templates/footer.php");
 ?>
