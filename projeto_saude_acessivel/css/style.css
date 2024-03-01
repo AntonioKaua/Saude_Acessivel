@@ -1,3 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+html{
+    height: 500vh;
+}
+
 .container{
     display: flex;
     align-items: center;
@@ -18,4 +27,287 @@
     display: flex;
     flex-direction: row;
 }
+/* LANDING CSS */
+body{
+    background-color: #D7E4EC;
+  }
+  .container2{
+    max-width: 1280px;
+    margin: auto;
+  }
+  .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header{
+    width: 100%;
+    padding: 60px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+  }
+  header.rolagem{
+    background-color: #D7E4EC;
+    padding: 20px 4%;
+  }
+  header.rolagem a{
+    color: #fff;
+  }
+  
+  header ul{
+    list-style-type: none;
+  }
+  header ul li{
+    display: inline-block;
+    margin: 0 40px;
+  }
+  header ul li a{
+    color: #fff;
+    text-decoration: none; 
+  }
+  .btn-cadastro button{
+    width: 120px;
+    height: 40px;
+    border: 0;
+    background-color: #00BFFF;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s;
+  }
+  .banner{
+    height: 100vh;
+    background-image: url(./img/inicial.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+/* END LANDING CSS */
 
+/* LOGIN CSS */
+body.login{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+body.login *{
+    box-sizing: border-box;
+}
+.main-login{
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-login{
+    width: 50vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #246EAE;
+}
+.card-login{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30xpx 35px;
+}
+.textfield{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+.textfield > input{
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #FFFFFF;
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px #00000056;
+  outline: none;
+  box-sizing: border-box;
+}
+.textfield > label{
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+.textfield > input::placeholder{
+  color: #f0ffff94;
+}
+.btn-login{
+  width: 100%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #FFFFFF;
+  background: #270637;
+  cursor: pointer;
+}
+.btn-loginG{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #270637;
+    background: #FFFFFF;
+    cursor: pointer;
+  }
+.right-login{
+    width: 50vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.right-login-image{
+    width: 35vw;
+}
+/* END LOGIN CSS */
+
+/* CADASTRO USUARIO*/
+body.login2{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+  }
+  body.login2 *{
+    box-sizing: border-box;
+  }
+  .main-login2{
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .left-login2{
+    width: 50vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #4888BF;
+  }
+  .left-login2 > h1{
+    font-size: 3vw;
+    color:#fff;
+    
+  }
+  .left-login2 > h2{
+    font-size: 2vw;
+    color: #fff;
+
+  }
+  .right-login2{
+    width: 50vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9DBDE7;
+  }
+  .card-login2{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30xpx 35px;
+  }
+  .textfield2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+  }
+  .textfield2 > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #D9D9D9;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+  }
+  .textfield2 > label{
+    margin-bottom: 10px;
+  }
+  .btn-login2{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #4888BF;
+    cursor: pointer;
+  }
+
+/* END CADASTRO USUARIO*/
+/* SERVIÇOS */ 
+.servicos{
+  .full-width-div {
+    width: 100vw;
+    height: 200px;
+    background-color: #246EAE;
+  }
+}
+
+@media only screen and  (max-width: 940px){
+    .card-login{
+        width: 85%;
+    }
+}
+@media only screen and (max-width: 600px){
+    .main-login{
+        flex-direction: column;
+    }
+    .left-login > h1{
+        display: none;
+      }
+      .left-login{
+        width: 100%;
+        height: auto;
+      }
+      .right-login{
+        width: 100%;
+        height: auto;
+      }
+      .left-login-image{
+        width: 50vw;
+      }
+      .card-login{
+        width: 90%;
+      }
+    }
