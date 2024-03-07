@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
 </head>
-<body>
 <body class="login">
 
 <header id="header">
     <div class="container2">
 
         <div class="flex">
-            <a href="index.html"><img src="./img/programa.png" alt="logo"></a>
+            <a href="index.php"><img src="../img/vitalis.png" alt="logo"></a>
 
             <nav>
                 <ul>
@@ -23,7 +23,7 @@
             </nav>
 
             <div class="btn-cadastro">
-                <a href="cadastro.html"><button>CADASTRO</button></a>
+                <a href="cadastro_usuario.php"><button>CADASTRO</button></a>
             </div>
         </div>
     </div>
@@ -31,34 +31,27 @@
 
 <div class="main-login">
     <div class="rigth-login">
-        <img src="./img/pediatrician-cuate.png" class="rigth-login-image" alt="CONSULTAIMAGEM">
+        <img src="../img/Pediatrician-cuate.png" class="rigth-login-image" alt="CONSULTAIMAGEM">
     </div>
-    <form action="../process/login.php" method="POST">
-        <div class="left-login">
-            <div class="card-login">
-                <div class="textfield">
-                    <label for="email">Digite seu e-mail:</label>
-                    <input type="email" name="email" placeholder="Digite seu email...">
-                </div>
-                <div class="textfield">
-                    <label for="cpf">CPF:</label>
-                    <input oninput="mascaraCpf(this)" type="text" name="cpf" placeholder="Digite seu CPF...">
-                </div>
-                <div class="textfield">
-                    <label for="password">Senha:</label>
-                    <input type="password" name="senha" placeholder="Digite sua senha...">
-                </div>
-                <div>
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Remember me</label>
-                </div>
-                <button name="type" value="loginU" type="submit">Login</button>
-                <!-- <a href="index.php"><button class="btn-loginG">Login with Google</button></a> -->
+    <div class="left-login">
+        <div class="card-login">
+            <div class="textfield">
+                <label for="email">Digite seu e-mail:</label>
+                <input type="email" name="email" placeholder="Digite seu email...">
             </div>
+            <div class="textfield">
+                <label for="password">Senha:</label>
+                <input type="password" name="password" placeholder="Digite sua senha...">
+            </div>
+            <div>
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+            <a href="index.php"><button class="btn-login">Login</button></a>
+            <a href="index.php"><button class="btn-loginG">Login with Google</button></a>
         </div>
-    </form>
+    </div>
 </div>
 </header>
 </body>
 </html>
-<?php include_once('../templates/footer.php'); ?>
