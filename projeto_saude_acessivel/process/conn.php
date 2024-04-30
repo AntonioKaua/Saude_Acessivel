@@ -1,7 +1,7 @@
 <?php 
  session_start();
  $user = "root";
- $pass = "qwe123";
+ $pass = "aluno";
  $host = "localhost";
  $db = "posto";
  $port = '3306'; // Porta do banco de dados

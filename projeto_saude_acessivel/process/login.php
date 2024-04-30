@@ -52,12 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
     } elseif ($type == 'loginU') {
         $email = $_POST['email'];
-        $cpf = $_POST['cpf'];
-        $senha = $_POST['senha'];
+        $senha = $_POST['password'];
 
         try {
-            $login_UQuery = $conn->prepare("SELECT * FROM usuarios WHERE cpf = :cpf AND senha = :senha;");
-            $login_UQuery->bindParam(":cpf", $cpf);
+            $login_UQuery = $conn->prepare("SELECT * FROM usuarios WHERE email = :email AND senha = :senha;");
+            $login_UQuery->bindParam(":email", $email);
             $login_UQuery->bindParam(":senha", $senha);
             $login_UQuery->execute();
             $user = $login_UQuery->fetch(PDO::FETCH_ASSOC);
